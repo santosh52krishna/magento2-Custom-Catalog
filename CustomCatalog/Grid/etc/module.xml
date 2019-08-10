@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Grid Module
+ * @category  Qentelli
+ * @package   CustomCatalog_Grid
+ * @author    Qentelli
+ * @copyright Copyright (c) 2018-2019 Qentelli (https://www.qentelli.com/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="CustomCatalog_Grid" setup_version="1.0.0">
+    </module>
+</config>

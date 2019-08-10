@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Menu
+ * @category  Qentelli
+ * @package   CustomCatalog_Grid
+ * @author    Qentelli
+ * @copyright Copyright (c) 2018-2019 Qentelli (https://www.qentelli.com/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="CustomCatalog_Grid::add_row" title="Custom Catalog" module="CustomCatalog_Grid" sortOrder="20" parent="Magento_Catalog::inventory" action="grid/grid" resource="CustomCatalog_Grid::add_row"/>
+    </menu>
+</config>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/** Grid di xml
+ * @category  Qentelli
+ * @package   CustomCatalog_Grid
+ * @author    Qentelli
+ * @copyright Copyright (c) 2018-2019 Qentelli (https://www.qentelli.com/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="CustomCatalog\Grid\Api\Data\GridInterface" type="CustomCatalog\Grid\Model\Grid" />
+
+    <virtualType name="CustomCatalog\Grid\Model\ResourceModel\Grid\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">qentelli_custom_catalog</argument>
+            <argument name="resourceModel" xsi:type="string">CustomCatalog\Grid\Model\ResourceModel\Grid</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="grid_record_grid_list_data_source" xsi:type="string">CustomCatalog\Grid\Model\ResourceModel\Grid\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="CustomCatalog\Grid\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="CustomCatalog\Grid\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">customLogHandler</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">CustomCatalog\Grid\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- custom API  -->
+    <preference for="CustomCatalog\Grid\Api\VpnGetInterface"
+                type="CustomCatalog\Grid\Model\API\ProductRepository" />
+
+</config>
