@@ -1,5 +1,5 @@
 {
-    "name": "qentelli/magento2-create-admin-grid",
+    "name": "CustomCatalog/Grid",
     "description": "Here We Create Collection Grid , Edit/Add Grid Row And Installer In Magento2",
     "require": {
         "php": "~5.5.0|~5.6.0|~7.0.0|7.1.*|7.2.*",
@@ -23,7 +23,7 @@
         "map": [
             [
                 "*",
-                "qentelli/magento2-create-admin-grid"
+                "CustomCatalog/Grid"
             ]
         ]
     }
