@@ -85,17 +85,17 @@ class InstallSchema implements InstallSchemaInterface
             'Created At'
         )->addIndex(
                $installer->getIdxName('qentelli_custom_catalog',
-                   ['product_id', 'vpn'],
+                   ['product_id'],
                    \Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_UNIQUE
                ),
-               ['product_id', 'vpn'],
+               ['product_id'],
                ['type' => \Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_UNIQUE]
         )->addIndex(
                $installer->getIdxName('qentelli_custom_catalog',
-                   ['copywrite_info', 'sku'],
+                   ['copywrite_info', 'sku', 'vpn'],
                    \Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
                ),
-               ['copywrite_info', 'sku'],
+               ['copywrite_info', 'sku', 'vpn'],
                ['type' => \Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT]
         )->setComment(
             'Custom Catalog Data Table'
